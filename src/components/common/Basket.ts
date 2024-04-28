@@ -1,6 +1,6 @@
 import {Component} from "../base/Component";
 import {ensureElement } from "../../utils/utils";
-import {EventEmitter} from "../base/Ivents";
+import {EventEmitter} from "../base/Events";
 import { IBasketView } from "../../types";
 
 export class Basket extends Component<IBasketView> {

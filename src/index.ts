@@ -1,7 +1,7 @@
 import './scss/styles.scss';
 
 import { ICardItem, IOrderPayments, IOrderContacts } from './types';
-import { EventEmitter } from './components/base/Ivents';
+import { EventEmitter } from './components/base/Events';
 import { LarekAPI } from './components/LarekApi';
 import { API_URL, CDN_URL } from './utils/constants';
 import { AppState, BasketState } from './components/AppData';

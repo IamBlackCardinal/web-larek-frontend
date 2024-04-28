@@ -1,4 +1,4 @@
-import {IEvents} from "./Ivents";
+import {IEvents} from "./Events";
 
 // Гарда для проверки на модель
 export const isModel = (obj: unknown): obj is Model<any> => {

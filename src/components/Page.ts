@@ -1,6 +1,6 @@
 import { ICatalog } from "../types";
 import { Component } from "./base/Component";
-import { IEvents } from "./base/Ivents";
+import { IEvents } from "./base/Events";
 import { ensureElement } from "../utils/utils";
 
 export class Page extends Component<ICatalog> {
