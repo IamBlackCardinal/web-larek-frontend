@@ -1,5 +1,5 @@
 import { Form } from "./common/Form";
-import { IEvents } from "./base/Events";
+import { IEvents } from "./base/Ivents";
 import { IOrderPayments } from "../types";
 
 export class OrderPayments extends Form<IOrderPayments> {
