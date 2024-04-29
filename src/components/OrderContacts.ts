@@ -5,11 +5,6 @@ import { IOrderContacts } from '../types';
 export class OrderContacts extends Form<IOrderContacts> {
 	constructor(container: HTMLFormElement, events: IEvents) {
 		super(container, events);
-
-		this.container.addEventListener('submit', (e: Event) => {
-			e.preventDefault();
-			this.events.emit(`${this.container.name}:submit`);
-		});
 	}
 
 	set phone(value: string) {
