@@ -78,7 +78,7 @@ events.on('card:select', (item: ICardItem) => {
 events.on('preview:changed', (item: ICardItem) => {
 	const showItem = (item: ICardItem) => {
 		const previewCard = new PreviewCard(cloneTemplate(cardPreviewTemplate), {
-			onClick: () => events.emit('busketButton:click', item),
+			onClick: () => events.emit('basketButton:click', item),
 		});
 		modal.render({
 			content: previewCard.render({
@@ -109,9 +109,9 @@ events.on('preview:changed', (item: ICardItem) => {
 });
 
 //  клик по кнопке "в корзину" - отправляет данные карточки для их добавления в массив
-events.on('busketButton:click', (item: ICardItem) => {
+events.on('basketButton:click', (item: ICardItem) => {
 	if (!basketData.basketArray.includes(item)) {
-		basketData.addToBusket(item);
+		basketData.addToBasket(item);
 		appData.order.items.push(item.id);
 		appData.order.total = basketData.total();
 	}
@@ -144,7 +144,7 @@ events.on('basket:open', () => {
 
 // клик "удалить" в корзине
 events.on('basketDeleteButton:click', (item: ICardItem) => {
-	basketData.removeFromBusket(item);
+	basketData.removeFromBasket(item);
 	appData.order.items.pop();
 	appData.order.total = basketData.total();
 	console.log(appData.order);

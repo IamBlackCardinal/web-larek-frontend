@@ -75,12 +75,12 @@ export class BasketState extends Model<IBasketState> {
 		this.basketArray = basketArray;
 	}
 
-	addToBusket(item: ICardItem) {
+	addToBasket(item: ICardItem) {
 		this.basketArray.push(item);
 		this.emitChanges('basket:changed', item);
 	}
 
-	removeFromBusket(item: ICardItem) {
+	removeFromBasket(item: ICardItem) {
 		this.basketArray.shift();
 		this.emitChanges('basket:changed', item);
 	}

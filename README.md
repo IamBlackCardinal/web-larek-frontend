@@ -291,8 +291,8 @@ yarn build
 **BasketState**  
 Состояние корзины  
 Методы:
-   - addToBusket: void (*добавляет элемент в корзину*)
-   - removeFromBusket: void (*удаляет элемент из корзины*)
+   - addToBasket: void (*добавляет элемент в корзину*)
+   - removeFromBasket: void (*удаляет элемент из корзины*)
    - clearBasket: void (*очищает корзину*)
    - total: number (*вычисляет итоговую стоимость товаров в корзине*)
 
