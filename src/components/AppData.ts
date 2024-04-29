@@ -42,6 +42,15 @@ export class AppState extends Model<IAppState> {
 		}
 	}
 
+	initOrderData(){
+		this.order.address = '';
+		this.order.email = '';
+		this.order.phone = '';
+		this.order.items = [];
+		this.order.payment = '';
+		this.order.total = 0;
+	}
+
 	setPaymentMethod(value: string): void {
 		this.order.payment = value;
 		this.validateOrder();

@@ -231,13 +231,13 @@ events.on('contacts:submit', () => {
 			});
 			modal.render({
 				content: successScreen.render({
-					counter: basketData.total(),
+					counter: appData.order.total,
 				}),
 			});
       basketData.clearBasket();
-      appData.order.items = [];
-      appData.order.total = basketData.total();
+      appData.initOrderData();
       basket.makeButtonActive(true);
+      orderPayments.setPaymentButton('');
 		})
 		.catch((err) => {
 			console.error(err);
