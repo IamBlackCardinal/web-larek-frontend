@@ -102,15 +102,7 @@ events.on('preview:changed', (item: ICardItem) => {
 	};
 
 	if (item) {
-		api
-			.getCard(item.id)
-			.then((result) => {
-				item.description = result.description;
-				showItem(item);
-			})
-			.catch((err) => {
-				console.error(err);
-			});
+    showItem(item);
 	} else {
 		modal.close();
 	}
@@ -152,7 +144,6 @@ events.on('basket:open', () => {
 
 // клик "удалить" в корзине
 events.on('basketDeleteButton:click', (item: ICardItem) => {
-	console.log(`отладка - клик "удалить из списка корзины" ${item.id}`);
 	basketData.removeFromBusket(item);
 	appData.order.items.pop();
 	appData.order.total = basketData.total();
