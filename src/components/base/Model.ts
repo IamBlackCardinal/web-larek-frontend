@@ -1,7 +1,7 @@
 import {IEvents} from "./Events";
 
 // Гарда для проверки на модель
-export const isModel = (obj: unknown): obj is Model<any> => {
+export const isModel = <T>(obj: unknown): obj is Model<T> => {
     return obj instanceof Model;
 }
 

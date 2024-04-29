@@ -2,7 +2,7 @@ import { ISuccessPage } from "../types";
 import { Component } from "./base/Component";
 import { ensureElement } from "../utils/utils";
 
-export class Success extends Component<any> {
+export class Success extends Component<ISuccessPage> {
   protected _counter: HTMLElement;
   protected _successButton: HTMLButtonElement;
 

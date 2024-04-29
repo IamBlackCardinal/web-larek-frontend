@@ -1,5 +1,5 @@
 import { Model } from "./base/Model";
-import { ICardItem, IAppState, IOrder, IBasketState, FormErrors, IOrderContacts, IOrderPayments } from "../types";
+import { ICardItem, IAppState, IOrder, IBasketState, FormErrors, IOrderContacts } from "../types";
 import { IEvents } from "./base/Events";
 
 export class AppState extends Model<IAppState> {

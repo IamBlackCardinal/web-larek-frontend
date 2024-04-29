@@ -99,6 +99,7 @@ export interface IModalData {
 //страница успеха
 export interface ISuccessPage {
 	onClick: (event: MouseEvent) => void;
+	counter?: number;
 }
 
 //ошибки валидации форм

@@ -217,7 +217,7 @@ events.on('order:submit', () => {
 events.on('contacts:submit', () => {
   console.log('отладка - клик Оплатить');
   api.postOrder(appData.order)
-    .then((result) => {
+    .then(() => {
       const successScreen = new Success(cloneTemplate(successTemplate), {
         onClick: () => events.emit('successScreenButton:click')
       });
