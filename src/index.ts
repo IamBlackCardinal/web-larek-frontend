@@ -234,6 +234,10 @@ events.on('contacts:submit', () => {
 					counter: basketData.total(),
 				}),
 			});
+      basketData.clearBasket();
+      appData.order.items = [];
+      appData.order.total = basketData.total();
+      basket.makeButtonActive(true);
 		})
 		.catch((err) => {
 			console.error(err);
@@ -242,10 +246,7 @@ events.on('contacts:submit', () => {
 
 // Клик  "За новыми покупками"
 events.on('successScreenButton:click', () => {
-	basketData.clearBasket();
-	appData.order.items = [];
 	modal.close();
-	basket.makeButtonActive(true);
 });
 
 // деактивировать кнопку "оформить" в изначально пустрой корзине
