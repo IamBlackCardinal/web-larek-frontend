@@ -96,7 +96,7 @@ events.on('preview:changed', (item: ICardItem) => {
 		}
 
 		// деактивация кнопки "В корзину", если товар уже в корзине
-		if (appData.order.items.includes(item.id)) {
+		if (basketData.basketArray.includes(item)) {
 			previewCard.markAdded();
 		}
 	};
@@ -112,8 +112,6 @@ events.on('preview:changed', (item: ICardItem) => {
 events.on('basketButton:click', (item: ICardItem) => {
 	if (!basketData.basketArray.includes(item)) {
 		basketData.addToBasket(item);
-		appData.order.items.push(item.id);
-		appData.order.total = basketData.total();
 	}
 	basket.makeButtonActive(false);
 	modal.close();
@@ -145,9 +143,6 @@ events.on('basket:open', () => {
 // клик "удалить" в корзине
 events.on('basketDeleteButton:click', (item: ICardItem) => {
 	basketData.removeFromBasket(item);
-	appData.order.items.pop();
-	appData.order.total = basketData.total();
-	console.log(appData.order);
 
 	// деактивировать кнопку "оформить" в очищенной корзине
 	if (!basketData.basketArray.length) {
@@ -157,6 +152,10 @@ events.on('basketDeleteButton:click', (item: ICardItem) => {
 
 // клик "Оформить"
 events.on('order:open', () => {
+  basketData.basketArray.forEach(item => {
+    appData.order.items.push(item.id);
+  });  
+  appData.order.total = basketData.total();
 	modal.render({
 		content: orderPayments.render({
 			payment: '',

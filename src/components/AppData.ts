@@ -81,7 +81,10 @@ export class BasketState extends Model<IBasketState> {
 	}
 
 	removeFromBasket(item: ICardItem) {
-		this.basketArray.shift();
+		const itemIndex = this.basketArray.indexOf(item, 0);
+		if (itemIndex > -1) {
+			this.basketArray.splice(itemIndex, 1);
+		}
 		this.emitChanges('basket:changed', item);
 	}
 
