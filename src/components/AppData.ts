@@ -42,7 +42,7 @@ export class AppState extends Model<IAppState> {
 		}
 	}
 
-	initOrderData(){
+	initOrderData() {
 		this.order.address = '';
 		this.order.email = '';
 		this.order.phone = '';

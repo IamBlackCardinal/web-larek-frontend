@@ -102,7 +102,7 @@ events.on('preview:changed', (item: ICardItem) => {
 	};
 
 	if (item) {
-    showItem(item);
+		showItem(item);
 	} else {
 		modal.close();
 	}
@@ -152,10 +152,10 @@ events.on('basketDeleteButton:click', (item: ICardItem) => {
 
 // клик "Оформить"
 events.on('order:open', () => {
-  basketData.basketArray.forEach(item => {
-    appData.order.items.push(item.id);
-  });  
-  appData.order.total = basketData.total();
+	basketData.basketArray.forEach((item) => {
+		appData.order.items.push(item.id);
+	});
+	appData.order.total = basketData.total();
 	modal.render({
 		content: orderPayments.render({
 			payment: '',
@@ -234,10 +234,10 @@ events.on('contacts:submit', () => {
 					counter: appData.order.total,
 				}),
 			});
-      basketData.clearBasket();
-      appData.initOrderData();
-      basket.makeButtonActive(true);
-      orderPayments.setPaymentButton('');
+			basketData.clearBasket();
+			appData.initOrderData();
+			basket.makeButtonActive(true);
+			orderPayments.setPaymentButton('');
 		})
 		.catch((err) => {
 			console.error(err);
