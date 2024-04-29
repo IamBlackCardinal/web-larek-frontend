@@ -35,8 +35,8 @@ export interface ICatalog {
 //апи магазина
 export interface ILarekAPI {
 	cdn: string;
-  getCardList: () => Promise<ICardItem[]>;
-  getCardItem: (id: string) => Promise<ICardItem>;
+	getCardList: () => Promise<ICardItem[]>;
+	getCardItem: (id: string) => Promise<ICardItem>;
 }
 
 //контакты заказа
@@ -72,7 +72,7 @@ export interface IAppState {
 
 //действия карточек
 export interface ICardActions {
-  onClick: (event: MouseEvent) => void;
+	onClick: (event: MouseEvent) => void;
 }
 
 //состояние корзины
