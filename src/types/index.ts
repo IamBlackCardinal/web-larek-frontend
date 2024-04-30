@@ -1,11 +1,3 @@
-export enum Category {
-	'софт-скил',
-	'другое',
-	'дополнительное',
-	'кнопка',
-	'хард-скил',
-}
-
 //карточка товара
 export interface ICardItem {
 	id: string; //уникальный идентификатор товара
@@ -30,13 +22,6 @@ export interface ICatalog {
 	wrapper: HTMLElement;
 	basket: HTMLElement;
 	locked: boolean;
-}
-
-//апи магазина
-export interface ILarekAPI {
-	cdn: string;
-	getCardList: () => Promise<ICardItem[]>;
-	getCardItem: (id: string) => Promise<ICardItem>;
 }
 
 //контакты заказа
@@ -84,11 +69,6 @@ export interface IBasketState {
 export interface IBasketView {
 	ul: HTMLElement[];
 	counter: number;
-}
-
-//действия корзины
-export interface IBasketActions {
-	onClick: (event: MouseEvent) => void;
 }
 
 //модальное окно
