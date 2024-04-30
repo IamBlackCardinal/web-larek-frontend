@@ -51,11 +51,11 @@ export class Card extends Component<ICardItem> {
 		return this._image.src || ('' && this._image.alt) || '';
 	}
 
-	set category(value: string) { 
-    this.setText(this._category, value); 
-    this._category.className = 'card__category';
-    this._category.classList.add(`card__category${cardCategory[value]}`); 
-}
+	set category(value: string) {
+		this.setText(this._category, value);
+		this._category.className = 'card__category';
+		this._category.classList.add(`card__category${cardCategory[value]}`);
+	}
 
 	get category(): string {
 		return this._category.textContent || '';
