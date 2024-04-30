@@ -1,6 +1,7 @@
 import { Component } from './base/Component';
 import { ICardItem, ICardActions, IPreviewCard } from '../types';
 import { ensureElement } from '../utils/utils';
+import { cardCategory } from '../utils/constants';
 
 export class Card extends Component<ICardItem> {
 	protected _id: string;
@@ -50,25 +51,11 @@ export class Card extends Component<ICardItem> {
 		return this._image.src || ('' && this._image.alt) || '';
 	}
 
-	set category(value: string) {
-		this.setText(this._category, value);
-		if (value === 'софт-скил') {
-			this._category.className = 'card__category';
-			this._category.classList.add('card__category_soft');
-		} else if (value === 'другое') {
-			this._category.className = 'card__category';
-			this._category.classList.add('card__category_other');
-		} else if (value === 'дополнительное') {
-			this._category.className = 'card__category';
-			this._category.classList.add('card__category_additional');
-		} else if (value === 'кнопка') {
-			this._category.className = 'card__category';
-			this._category.classList.add('card__category_button');
-		} else if (value === 'хард-скил') {
-			this._category.className = 'card__category';
-			this._category.classList.add('card__category_hard');
-		}
-	}
+	set category(value: string) { 
+    this.setText(this._category, value); 
+    this._category.className = 'card__category';
+    this._category.classList.add(`card__category${cardCategory[value]}`); 
+}
 
 	get category(): string {
 		return this._category.textContent || '';
